@@ -17,12 +17,12 @@ public class Calculator {
         return a / b;
     }
 
-    public long divade(long a, long b){
-        return a / b;
+    public double divade(long a, long b){
+        return (double) a / b;
     }
 
-    public int divade(int a, int b){
-        return a / b;
+    public double divade(int a, int b){
+        return (double) a / b;
     }
 
     //Умножение
