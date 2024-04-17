@@ -90,7 +90,7 @@ public class Part1 {
         System.out.println(result);
     }
 
-    public static void checkOneOrThree(int[] array){
+    public static boolean checkOneOrThree(int[] array){
         boolean result = false;
         for (int i = 0; i < array.length; i++){
             if(array[i] == 3 || array[i] == 1){
@@ -98,7 +98,7 @@ public class Part1 {
                 break;
             }
         }
-        System.out.println("Массив содержит число 1 или 3? " + result);
+        return result;
     }
 
     public static void main(String[] args){
@@ -108,7 +108,10 @@ public class Part1 {
         compareInt();
         int[]array = inputArray();
         printArray(array);
+
         threeFirstOrLast(array);
-        checkOneOrThree(array);
+
+        boolean result = checkOneOrThree(array);
+        System.out.println("Массив содержит число 1 или 3?: " + result);
     }
 }
