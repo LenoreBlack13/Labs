@@ -1,4 +1,5 @@
-package Lab6;
+package Lab6new;
+
 
 public class Main {
     public static void main(String[] args) {

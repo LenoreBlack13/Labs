@@ -1,4 +1,5 @@
-package Lab6;
+package Lab6new;
+
 
 public class Client extends Person implements BankOperations {
     private String nameBank;

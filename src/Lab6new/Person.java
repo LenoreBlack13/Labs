@@ -1,4 +1,4 @@
-package Lab6;
+package Lab6new;
 
 public abstract class Person {
     protected String firstName;

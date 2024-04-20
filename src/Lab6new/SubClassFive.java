@@ -1,4 +1,4 @@
-package Lab6;
+package Lab6new;
 
 public class SubClassFive extends MainClassFive {
     @Override

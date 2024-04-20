@@ -1,4 +1,4 @@
-package Lab6;
+package Lab6new;
 
 public class BankEmployee extends Person implements BankOperations {
     private String nameBank;
