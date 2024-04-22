@@ -1,6 +1,5 @@
 package Lab6;
 
-
 public class Client extends Person implements BankOperations {
     private String nameBank;
     private double balance;
