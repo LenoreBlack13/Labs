@@ -3,35 +3,28 @@ package Lab10;
 import java.io.*;
 
 public class MergeFiles {
-    public static void mergeText(String inputFile1, String inputFile2, String outputFile) {
-        try {
-            //Читает text1
-            BufferedReader reader1 = new BufferedReader(new FileReader(inputFile1));
+    //Метод для чтения и записи файла
+    public static void readFile(String inputFile, BufferedWriter writer) throws IOException {
+        //try-with-resources для чтения файла и автоматического закрытия BufferedReader
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));) {
             //Переменная для хранения каждой строки из файла
             String string;
-
-            //Запись text1 в text
-            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
-            while ((string = reader1.readLine()) != null) {
+            //Цикл для построчного чтения файла
+            while ((string = reader.readLine()) != null) {
                 writer.write(string);
                 //Метод для разделения строк
                 writer.newLine();
             }
-            reader1.close();
+        }
+    }
 
-            //Читает text2
-            BufferedReader reader2 = new BufferedReader(new FileReader(inputFile2));
-
-            //Запись text2 в text
-            while ((string = reader2.readLine()) != null) {
-                writer.write(string);
-                //Метод для разделения строк
-                writer.newLine();
-            }
-            reader2.close();
-
-            writer.close();
-
+    public static void mergeText(String inputFile1, String inputFile2, String outputFile) {
+        //try-with-resources для автоматического закрытия BufferedWriter
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+            //Читает и записывает text1
+            readFile(inputFile1, writer);
+            //Читает и записывает text2
+            readFile(inputFile2, writer);
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
